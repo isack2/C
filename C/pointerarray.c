@@ -25,19 +25,14 @@ int m_arrar(int row, int column) //make dynamic array memory
             printf("component of array[%d][%d]:", i, j);
             scanf("%d", &temp);
             ptr_row[i][j] = temp;
-        }
-    }
-    for(int i = 0 ; i < row ; i++){
-        for(int j = 0 ; j < column ; j++){
             printf("%d", ptr_row[i][j]);
         }
-        printf("\n");
     }
-
-    return 0;
 
     for(int i = 0 ; i < row ; i++){
         free(ptr_row[i]);
     }
     free(ptr_row);
+
+    return 0;
 }
