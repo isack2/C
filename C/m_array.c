@@ -6,12 +6,11 @@ int main(void){
     int r, c;
 
     printf("input row and column :");
-    scanf("%d", &r);
-    scanf("%d", &c);
+    scanf("%d %d", &r, &c);
     m_array(r, c);
 }
 
-int m_arrar(int row, int column) //make dynamic array memory
+int m_array(int row, int column) //make dynamic array memory
 {
     int temp;
     int ** ptr_row = NULL;
@@ -25,8 +24,14 @@ int m_arrar(int row, int column) //make dynamic array memory
             printf("component of array[%d][%d]:", i, j);
             scanf("%d", &temp);
             ptr_row[i][j] = temp;
-            printf("%d", ptr_row[i][j]);
         }
+    }
+
+    for(int i = 0 ; i < row ; i++){
+        for(int j = 0 ; j < column ; j++){
+            printf("%d ", ptr_row[i][j]);
+        }
+        printf("\n");
     }
 
     for(int i = 0 ; i < row ; i++){
