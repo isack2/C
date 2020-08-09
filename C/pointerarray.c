@@ -1,16 +1,17 @@
 #include<stdio.h>
 #include<stdlib.h>
 
+int m_array(int row, int column); //prototype
 int main(void){
-    int cm_array(int row, int column); //prototype
-    int row, column;
+    int r, c;
 
     printf("input row and column :");
-    scanf("%d %d", &row, &column);
-    cm_array(row, column);
+    scanf("%d", &r);
+    scanf("%d", &c);
+    m_array(r, c);
 }
 
-int cm_arrar(int row, int column) //make dynamic array memory
+int m_arrar(int row, int column) //make dynamic array memory
 {
     int temp;
     int ** ptr_row = NULL;
@@ -29,9 +30,11 @@ int cm_arrar(int row, int column) //make dynamic array memory
     for(int i = 0 ; i < row ; i++){
         for(int j = 0 ; j < column ; j++){
             printf("%d", ptr_row[i][j]);
-            }
-            printf("\n");
-            }
+        }
+        printf("\n");
+    }
+
+    return 0;
 
     for(int i = 0 ; i < row ; i++){
         free(ptr_row[i]);
